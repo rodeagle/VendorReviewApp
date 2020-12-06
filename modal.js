@@ -25,7 +25,7 @@ export default {
         let template = Handlebars.compile(source);
         let html = template(properties);
         $('body').append(html);
-        $('.modal').modal();
+        $('.modal').modal({backdrop: 'static', keyboard: false});
 
         $('[data-dismiss="modal"]').click(function(){
             // debugger;
