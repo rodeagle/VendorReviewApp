@@ -32,20 +32,18 @@ function Init(){
         let searchVal = $('#SearchBox').val();
         let base = newData;
         base = base.filter(function (item) {
-            return item.name.includes(searchVal);
+            return item.name.toLowerCase().includes(searchVal.toLowerCase());
         });
         CreateTable(base);
     });
 
-    $('.user-modal').click(function(){
-        let base = newData;
+    $(document).on('click','.user-modal',function(){
         let guid = $(this).data('guid');
-        let name = $(this).text();
         let res = data.data.filter(function (item) {
             return item.Guid == guid;
         })[0];
-        modal.Show({body : '<div class="py-2"><strong>Ultimos Comentarios : </strong><div><div class="modal-body-content"></div>', title : name });
-        debugger;
+        modal.Show({body : '<div class="py-2"><strong>Ultimos Comentarios : </strong><div><div class="modal-body-content"></div>', title : res.Name });
+
         let reviews = res.Comments.map(function(item){
             return{
                 type : (item.Type == "Mercado Libre") && `<span class="text-warning">ML</span>` || `<span class="text-danger">AMZ</span>`,

@@ -26,5 +26,17 @@ export default {
         let html = template(properties);
         $('body').append(html);
         $('.modal').modal();
+
+        $('[data-dismiss="modal"]').click(function(){
+            // debugger;
+            let res = $(this).parents('.modal');
+            res.modal('hide');
+            setTimeout(function(){
+                res.empty();
+                res.remove();
+                $('.modal-backdrop').remove();
+                $('.modal-backdrop').empty();
+            },250);
+        });
     }
 }
