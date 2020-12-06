@@ -1,0 +1,1 @@
+export default { lastUpdate: '12/5/2020', data : [{"Guid":"9217229c-529e-4b5b-8895-e3ae4df184ef","Name":"YIYI YANG","AverageDay":19.0,"AverageRefund":0.0,"AverageScore":0.0,"Comments":[{"TimeStamp":"2020-12-05T10:24:47","Type":"Mercado Libre","Refunded":true,"Comment":"atento"},{"TimeStamp":"2020-12-05T10:36:58","Type":"Amazon","Refunded":false,"Comment":"no me contesto"}]}] }
